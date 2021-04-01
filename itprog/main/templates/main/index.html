@@ -1,0 +1,34 @@
+{% extends 'main/base.html' %}
+
+{% block title %}CSV Data generator{% endblock %}
+
+
+{% block content %}
+<body>
+   <h3>Data schemas</h3>
+    <a class="btn btn-warning" href="/data_schemas">New schema</a>
+   <br />
+<table border="1" cellpadding="8" cellspacing="0">
+    <tr align="center" height="70">
+        <th style="background-color:#99ccff"><b>#</b></th>
+        <th style="background-color:#99ccff"><b>Title</b></th>
+        <th style="background-color:#99ccff"><b>Modified</b></th>
+        <th colspan="2" style="background-color:#99ccff"><b>Actions</b></th>
+
+    </tr>
+<div class="container">
+    {% for el in value %}
+    <tr>
+        <td align="center">#</td>
+        <td align="center">{{ el }}</td>
+        <td align="center"></td>
+        <td><a href="/index//update" class="btn btn-success">Edit schema</a></td>
+        <td><a href="/index//del" class="btn btn-danger">Delete</a></td>
+    </tr>
+    {% endfor %}
+</div>
+
+</table>
+</body>
+{% endblock %}
+
